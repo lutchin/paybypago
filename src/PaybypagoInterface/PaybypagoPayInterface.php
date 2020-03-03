@@ -5,5 +5,5 @@ interface PaybypagoPayInterface
 {
     public function payment($options);
 
-    public function signature();
+    public function signature($options);
 }

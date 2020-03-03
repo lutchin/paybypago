@@ -61,11 +61,11 @@ class PaybypagoSite implements PaybypagoInterface,PaybypagoPayInterface
             $data .= $option.'='.$value.'&';
         }
 
-        return $data.$this->signature();
+        return $data.$this->signature($options);
     }
 
-    public function signature()
+    public function signature($options)
     {
-        // TODO: Implement signature() method.
+        return base64_encode(hash("sha256", $options, true));
     }
 }
